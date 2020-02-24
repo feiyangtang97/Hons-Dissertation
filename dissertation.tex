@@ -1,0 +1,120 @@
+\documentclass[12pt,examcopy]{uathesis}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amssymb}
+\usepackage{moreverb}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{algorithm}
+\usepackage[utf8]{inputenc}
+\usepackage[noend]{algpseudocode}
+\usepackage{algorithmicx}
+\usepackage{amsthm}
+\usepackage[hyphens,spaces,obeyspaces]{url}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\usepackage{caption} 
+\captionsetup[table]{skip=5pt}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+%newtheorem{algorithm}{Algorithm}[chapter]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{decorations.shapes}
+
+% some settings to fill pages more densely
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+
+
+\begin{document}
+\title{Adaptive Self-Sufficient Itemset Miner for Transactional Data Streams}
+\author{Francis Tang}
+\department{Computer Science}
+\supervisor{David T.J. Huang}{Yun Sing Koh}
+\maketitle
+
+\frontmatter
+\begin{abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+Most studies on pattern mining consider itemsets that have a high frequency of occurrence as useful, often determined by the support of the itemsets. However, current research has shown that we need to move beyond a pure ``support-confidence" framework for pattern mining. Recently, there is an interest on finding statistically significant patterns and one of the most popular type of patterns is self-sufficient itemsets. One limitation is that these works do not consider concept drifts and cannot be used in a data stream. Learning in the online environment requires us to develop efficient and effective mechanisms to address the online characteristics of non-static data and non-stationary data distributions. In our research we will concentrate on detecting self-sufficient itemsets from data streams. The usefulness of these itemsets are not solely determined by the frequency of either their subsets or their supersets. We present a comprehensive framework for mining self-sufficient itemsets from data streams along with a drift detector. This supports mining self-sufficient itemsets in an online environment and provides the ability to adapt to changes in the stream.
+\end{abstract}
+
+\begin{acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+As my honours year comes to the end, first and foremost I would like to thank my extraordinary supervisors, David Huang and Yun Sing Koh for all of their wonderful care and patient guidance with me throughout this year. Even before I started studying this year, the way that you explained my project to me really inspired me to undertake my honours year in the pattern mining field. 
+
+David, you taught me how to read tons of research papers, organise my research project and provided me constant help getting me familiar with new definitions which I got totally puzzled from the beginning and I am so grateful of this. To Yun Sing also, there are too many things to say thank you for this year but thank you for always reminding me and assisting me in writing my conference paper. You both really did provide me with all the background knowledge and technical support which made every experiment possible. Also, when it came time to write my paper and dissertation, both of you were unbelievably helpful in developing my critical scientific writing strategies and for staying up late to get it all finished. Without you, none of my work this year would have been achieved. All the feedback and support you provided me along the way allowed me to progress smoothly through this year even when I was completely lost. I am so glad to have had you as my supervisors.
+
+I would also like to thank every other postgraduate student who I call my dear friends in the department for their assistance with all of the technical aspects of my experiments and for making me laugh when I was super stressed. Specifically, I would like to thank Jackie Excell and Edith Yi for all of their support during the year. Jackie taught me all the statistical skills I needed and Edith used her excellent programming skills to enlighten me hundreds of times when I was stuck.
+
+Last but not the least, I would like to thank my best friends Iris and Huan. Thank you for all of the time you spent with me this year, the ‘comfort foods’ when I was sick, your support and for making me feel better when I was really low.
+
+To mum at home, thanks so much for not only giving me financial support but also your unconditional love to support and guide me through this year. I hope I have made you proud.
+
+\end{acknowledgements}
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+ 
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+\newpage
+
+\renewcommand{\abstractname}{List of Publication}
+\begin{abstract}
+
+    \addcontentsline{toc}{chapter}{List of Publication}
+    Parts of this dissertation has been accepted for publication:
+    \begin{itemize}
+    \item Feiyang Tang, David T.J. Huang, Yun Sing Koh and Philippe Fournier-Viger. Adaptive Self-Sufficient Itemset Miner for Transactional Data Streams. In \textit{The $16^t^h$ Pacific Rim International Conference on Artificial Intelligence (PRICAI)}, 2019 (Core Ranking B).
+    \end{itemize}
+\end{abstract}%
+
+
+
+
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\mainmatter
+\include{Introduction/Introduction}
+\include{RelatedWorks/RelatedWorks}
+\include{Methodology/Methodology}
+\include{Experiments/Experiments}
+\include{Conclusion/Conclusion}
+
+\backmatter
+\bibliographystyle{plain}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliography{bibliography}
+
+
+\end{document}

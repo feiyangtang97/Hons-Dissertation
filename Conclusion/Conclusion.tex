@@ -1,0 +1,42 @@
+\chapter{Conclusion} \label{chapt:Conclusion}
+
+In this dissertation, we first comprehensively reviewed the pure ``support-confidence" framework for pattern mining and proposed a novel solution - self-sufficient itemsets. Then, we highlighted the deficiencies of the current methods. Against the shortage of current methods, we proposed Adaptive Self-Sufficient Itemset Miner (ASSIM) which makes self-sufficient itemset miner work in an online mode along with a drift detector to reduce the error brought by the non-stationary distributions. ASSIM includes a Batch Size Calculator to calculate the size of the batches, Self-Sufficient Itemset Generator to mine Self-Sufficient itemsets and Regional Concept Drift Adaptor to detect regional concept drifts.
+
+Experiments demonstrated that the Batch Size Calculator provides more accurate results without substantially increasing time or memory consumption. This proves that our technique ASSIM could achieve a better result as compared to using the Self-Sufficient itemset miners in a static way.
+
+In this final chapter we summarise our fndings and results presented in the dissertation, and discuss future directions for our research.
+
+\section{Achievements} \label{Conclusion:Achievements}
+
+The following list highlights the major achievements of this project:
+\begin{itemize}
+	\item We proposed a new framework ASSIM that is able to mine self-sufficient itemset from unlabelled item-based transactional data streams.
+		
+	\item We presented a new approach that enables the detection of self-sufficient itemset drifts from unlabelled item-based transactional data streams.
+	
+	\item We proposed a new regional drift detector that detects and adapts regional drifts in self-sufficient itemset mining to the underlying regional concept drifts.
+	
+	\item Through our evaluation, we showed that our design is feasible and improved the performance of the overall self-sufficient itemset mining and concept drift detection process by significantly improving precision and recall rates.
+	
+\end{itemize}
+
+\section{Limitations} \label{Conclusion:Limitations}
+
+This dissertation has presented algorithms and approaches that contribute to solving problems in change mining for the data stream environment. Despite the contributions, there are some limitations to the proposed algorithms and approaches.
+
+The first limitation is related to the concept drift detection for self-sufficient itemset mining. The current methodology works to detect drifts on a single mined self-sufficient itemset for each round, which can cause extra computational cost and complicate the process. It might be possible to perform this task on a parallel mode which can run multiple drift detectors on the same time.
+
+The second limitation is related to the actual online learning. As we discussed before in Chapter \ref{chapt:ASSIM}, it is possible to adopt a sliding-window model to actual achieve both the self-sufficient itemset and drift adaption process on a real-time updating data stream.
+
+\section{Future Directions} \label{Conclusion:FutureDirections}
+
+There are several future directions for the work this thesis presents. We will first discuss the future work for each of the individual topics in the chapters followed by broader general future directions we wish to pursue.
+
+\paragraph{Association Rule Mining}
+
+We discussed in detail how to find self-sufficient itemsets from unsupervised data streams in Chapter \ref{chapt:ASSIM}. In the future we intend to investigate dynamically adapting the $k$ value of our proposed technique based on the feature of data stream. For example, it is possible that a data stream contains more than 100 self-sufficient itemsets but the actual association rules needed are only 50. In this case, it is important to apply a filter on the preparation stage of data stream processing to give $k$ a tighter bound.
+
+\paragraph{Regional Drift Mining}
+
+We proposed a Regional Concept Drift Adaptor (RCDA) to facilitate the discovery of item association changes of self-sufficient itemsets in Chapter \ref{chapt:ASSIM}. Our future work in this part includes developing a more accurate method for regional drift adaptor which can retrieve location information related to drifted regions. This information can then be used to analyse in a wider picture to build a more accurate adaptive self-sufficient itemset miner that can better handle real-world data streams. We also want to adapt RCDA on a parallel mode to apply on multiple self-sufficient itemset on a single round.
+
